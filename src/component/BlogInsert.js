@@ -39,12 +39,12 @@ export class BlogInsert extends Component{
     BlogsCreateSubmit = async()=>{
 
         const  blogsId = localStorage.getItem('userId')
-       // const blogsheaders = localStorage.getItem('token')
+       const blogsheaders = localStorage.getItem('token')
         //console.log("this is vamsikrishna token",blogsheaders);
-        // const headerrs = {
-        //     Authorization:blogsheaders
-        // }
-        //console.log(headerrs);
+        const headerrs = {
+             Authorization:blogsheaders
+          }
+         console.log(headerrs);
         const data1 = {
             title:this.state.title,
             tag:this.state.tag,
@@ -54,8 +54,10 @@ export class BlogInsert extends Component{
         }
         console.log(data1);
         
-        const blogs = await axios.post("http://localhost:5000/api/bloguser",data1
-        )
+        const blogs = await axios.post("http://localhost:5000/api/bloguser",data1,{
+             headers:headerrs
+        })
+        
         console.log( "login blog api is sucessfull",blogs);
         this.toggleBlogDetail();
     }
