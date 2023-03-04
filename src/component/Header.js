@@ -1,19 +1,24 @@
 import react from 'react'
 import {Navbar,NavbarBrand} from 'reactstrap';
-import './Style/Style.css';
+import  Style from './Style/Style.css';
+
 
 export default function Header () {
     return (
         <>
         
         <Navbar
-         className="nav"
-         color= "secondary"
+         //className="Navbar"
+        // color= "secondary"
          
-         dark
+         //dark
+         style={{
+            background:"rgba(216, 196, 1, 0.553)",
+           margin:"5px"
+         }}
               >
          <NavbarBrand href="/">
-            Reactstrap
+            blogrestro
           </NavbarBrand>
          
        </Navbar>
